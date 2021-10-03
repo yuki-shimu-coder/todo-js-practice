@@ -35,7 +35,7 @@ const addIncomplete = (text) => {
     //未完了エリアからタスクを削除する
     completeTask.remove();
     //タスクのノードを生成し、完了エリアに追加する
-    // タスクテキスト
+    //タスクテキスト
     const p = document.createElement("p");
     p.className = "todoName";
     p.innerText = text;
