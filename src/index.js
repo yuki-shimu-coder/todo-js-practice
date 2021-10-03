@@ -7,22 +7,22 @@ import "./styles.css";
 const todoAdd = document.getElementById("js-todo-add");
 // 追加ボタンがクリックされたときのイベントを設定
 todoAdd.addEventListener("click", () => {
-  addIncomplete();
+  // 入力テキストの値を取得する
+  const text = document.getElementById("js-todo-item").value;
+  // 入力エリアを空にする
+  document.getElementById("js-todo-item").value = "";
+  addIncomplete(text);
 });
 
 // ===============================================
 // 未完了エリアへのタスク追加を関数化する
 // ===============================================
-const addIncomplete = () => {
-  // 入力テキストの値を取得する
-  const newTask = document.getElementById("js-todo-item").value;
-  // 入力エリアを空にする
-  document.getElementById("js-todo-item").value = "";
+const addIncomplete = (text) => {
   // 未完了エリアに追加する要素を生成する
   // タスクテキスト
   const p = document.createElement("p");
   p.className = "todoName";
-  p.innerText = newTask;
+  p.innerText = text;
 
   // 完了ボタン
   const completeBtn = document.createElement("button");
@@ -38,21 +38,32 @@ const addIncomplete = () => {
     // タスクテキスト
     const p = document.createElement("p");
     p.className = "todoName";
-    p.innerText = newTask;
+    p.innerText = text;
     // 戻すボタン
     const backBtn = document.createElement("button");
     backBtn.className = "back";
     backBtn.innerText = "戻す";
+    // 戻すボタンのイベント
+    backBtn.addEventListener("click", () => {
+      const backTask = backBtn.previousElementSibling;
+      const backTaskName = backTask.innerText;
+      addIncomplete(backTaskName);
+      backBtn.closest(".todo-task").remove();
+    });
     // 削除ボタン
-    const i = document.createElement("i");
-    i.className = "fas fa-trash-alt";
+    const deleteList = document.createElement("i");
+    deleteList.className = "fas fa-trash-alt";
+    // 削除ボタンのイベント
+    deleteList.addEventListener("click", () => {
+      deleteList.closest(".todo-task").remove();
+    });
     // divタグを生成する
     const div = document.createElement("div");
     div.className = "list-row";
     // divに追加する
     div.appendChild(p);
     div.appendChild(backBtn);
-    div.appendChild(i);
+    div.appendChild(deleteList);
 
     // lタグを生成する
     const li = document.createElement("li");
@@ -65,8 +76,11 @@ const addIncomplete = () => {
   });
 
   // 削除ボタン
-  const i = document.createElement("i");
-  i.className = "fas fa-trash-alt";
+  const deleteList = document.createElement("i");
+  deleteList.className = "fas fa-trash-alt";
+  deleteList.addEventListener("click", () => {
+    deleteList.closest(".todo-task").remove();
+  });
 
   // divタグを生成する
   const div = document.createElement("div");
@@ -74,7 +88,7 @@ const addIncomplete = () => {
   // divに追加する
   div.appendChild(p);
   div.appendChild(completeBtn);
-  div.appendChild(i);
+  div.appendChild(deleteList);
 
   // lタグを生成する
   const li = document.createElement("li");
