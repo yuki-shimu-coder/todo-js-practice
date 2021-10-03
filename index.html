@@ -1,16 +1,75 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>todo-js_practice</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+      integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm"
+      crossorigin="anonymous"
+    />
+  </head>
 
-<head>
-	<title>Parcel Sandbox</title>
-	<meta charset="UTF-8" />
-</head>
+  <body>
+    <div class="l-container">
+      <!-- 入力エリア -->
+      <div class="l-addArea u-mrg30 title">
+        <div class="list-row">
+          <input type="text" placeholder="ここにタスクを入力してください" />
+          <button>追加</button>
+        </div>
+      </div>
 
-<body>
-	<div id="app"></div>
+      <!-- 未完了エリア -->
+      <div class="l-incompleteArea u-mrg30">
+        <h1 class="title">未完了のタスク</h1>
+        <ul class="todo-list">
+          <li class="todo-task">
+            <div class="list-row">
+              <p class="todoName">本日のタスクはこれなんです</p>
+              <button class="complete">完了</button>
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </li>
+          <li class="todo-task">
+            <div class="list-row">
+              <p class="todoName">本日のタスクはこれなんです</p>
+              <button class="complete">完了</button>
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
 
-	<script src="src/index.js">
-	</script>
-</body>
-
+      <!-- 完了エリア -->
+      <div class="l-completeArea u-mrg30">
+        <h1 class="title">完了したタスク</h1>
+        <ul class="todo-list">
+          <li class="todo-task">
+            <div class="list-row">
+              <p class="todoName">完了したタスクはこれなんです</p>
+              <button class="complete">戻す</button>
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </li>
+          <li class="todo-task">
+            <div class="list-row">
+              <p class="todoName">完了したタスクはこれなんです</p>
+              <button class="complete">戻す</button>
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </li>
+          <li class="todo-task">
+            <div class="list-row">
+              <p class="todoName">完了したタスクはこれなんです</p>
+              <button class="complete">戻す</button>
+              <i class="fas fa-trash-alt"></i>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
 </html>

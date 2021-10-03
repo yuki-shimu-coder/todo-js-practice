@@ -1,3 +1,71 @@
 body {
   font-family: sans-serif;
 }
+input {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  vertical-align: middle;
+  outline: none;
+  width: 400px;
+  font-size: 16px;
+  margin-right: 30px;
+}
+
+button {
+  background: navy;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 30%;
+  cursor: pointer;
+}
+button:hover {
+  background: rgb(210, 22, 223);
+}
+
+.l-container {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.u-mrg30 {
+  margin-top: 30px;
+}
+
+.title {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.l-addArea {
+  background-color: #c5e99b;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.l-incompleteArea {
+  background-color: #aad6ec;
+  min-height: 400px;
+}
+
+.l-completeArea {
+  background-color: #fc9d9d;
+  min-height: 400px;
+}
+.list-row {
+  display: flex;
+  align-items: center;
+}
+.fas.fa-trash-alt {
+  font-size: 30px;
+  cursor: pointer;
+}
+.todoName {
+  margin-right: 30px;
+}
+button.complete {
+  margin-right: 30px;
+}
