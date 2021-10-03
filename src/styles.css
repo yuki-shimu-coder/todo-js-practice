@@ -49,11 +49,13 @@ button:hover {
 .l-incompleteArea {
   background-color: #aad6ec;
   min-height: 400px;
+  padding: 40px;
 }
 
 .l-completeArea {
   background-color: #fc9d9d;
   min-height: 400px;
+  padding: 40px;
 }
 .list-row {
   display: flex;
@@ -66,6 +68,10 @@ button:hover {
 .todoName {
   margin-right: 30px;
 }
-button.complete {
+button.complete,
+.back {
   margin-right: 30px;
+}
+.todo-task {
+  margin: 30px;
 }
