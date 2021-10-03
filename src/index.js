@@ -70,7 +70,7 @@ const addIncomplete = (text) => {
     li.className = "todo-task";
     li.appendChild(div);
 
-    // 未完了エリアにタスクを追加する
+    //完了エリアにタスクを追加する
     const completeList = document.getElementById("js-todo-complete-list");
     completeList.appendChild(li);
   });
